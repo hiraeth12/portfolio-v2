@@ -1,32 +1,82 @@
+"use client";
+import { useEffect, useState } from "react";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import About from "@/components/About";
+import PortfolioTabs from "@/components/portfolio/PortfolioTabs";
 
 export default function App() {
+  const [projects, setProjects] = useState([]);
+  const [certificates, setCertificates] = useState([]);
+  const [techStacks, setTechStacks] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const [projectsRes, certificatesRes, techStacksRes] = await Promise.all(
+          [
+            fetch("/data/projects.json"),
+            fetch("/data/certificates.json"),
+            fetch("/data/techStacks.json"),
+          ]
+        );
+
+        const projectsData = await projectsRes.json();
+        const certificatesData = await certificatesRes.json();
+        const techStacksData = await techStacksRes.json();
+
+        setProjects(projectsData);
+        setCertificates(certificatesData);
+        setTechStacks(techStacksData);
+      } catch (error) {
+        console.error("Failed to fetch portfolio data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <>
       <main className="min-h-screen bg-black text-white">
         <Navbar />
         <HeroSection />
-        <About/>
+        <About />
 
-        <div className="relative z-10 py-20 px-8 md:px-16">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-rose-500 to-indigo-500">
-              Featured Projects
+        {/* PortfolioTabs di sini */}
+        <div className="py-20 px-8 md:px-16 bg-black" id="Portofolio">
+          {/* Header section */}
+          <div
+            className="text-center pb-10"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+          >
+            <h2 className="inline-block text-3xl md:text-5xl font-bold text-center mx-auto text-transparent bg-clip-text bg-gradient-to-r from-[#333399] to-[#FF00CC] font-cascadia">
+              <span
+                style={{
+                  color: "#333399",
+                  backgroundImage:
+                    "linear-gradient(45deg, #333399 10%, #FF00CC 93%)",
+                  WebkitBackgroundClip: "text",
+                  backgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                }}
+              >
+                Portfolio
+              </span>
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {[1, 2, 3, 4, 5, 6].map((item) => (
-                <div
-                  key={item}
-                  className="aspect-video bg-white/5 border border-white/10 rounded-lg flex items-center justify-center hover:bg-white/10 transition-colors"
-                >
-                  <span className="text-white/50">Project {item}</span>
-                </div>
-              ))}
-            </div>
+            <p className="text-slate-400 max-w-2xl mx-auto text-sm md:text-base mt-2 font-cascadia">
+              Below is a list of projects I have worked on.
+            </p>
           </div>
+
+          {/* Portfolio Tabs */}
+          <PortfolioTabs
+            projects={projects}
+            certificates={certificates}
+            techStacks={techStacks}
+          />
         </div>
       </main>
     </>

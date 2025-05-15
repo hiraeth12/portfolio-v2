@@ -1,0 +1,30 @@
+[
+  {
+    "id": "1",
+    "Title": "Weather App",
+    "Description": "Aplikasi cuaca realtime menggunakan OpenWeather API.",
+    "Img": "/images/placeholder-1.jpg",
+    "Link": "#"
+  },
+  {
+    "id": "2",
+    "Title": "Todo List",
+    "Description": "Aplikasi manajemen tugas harian dengan fitur filter dan dark mode.",
+    "Img": "/images/placeholder-2.jpg",
+    "Link": "#"
+  },
+  {
+    "id": "3",
+    "Title": "Portfolio Website",
+    "Description": "Portofolio pribadi yang menampilkan proyek dan sertifikat saya.",
+    "Img": "/images/placeholder-3.jpg",
+    "Link": "#"
+  },
+  {
+    "id": "4",
+    "Title": "Movie Search",
+    "Description": "Cari film dari OMDB API dengan fitur pagination dan modal detail.",
+    "Img": "/images/placeholder-4.jpg",
+    "Link": "#"
+  }
+]

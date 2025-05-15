@@ -16,10 +16,10 @@ const Logo = () => (
 
 // Navigation items
 const navItems = [
-  { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
-  { name: "Projects", href: "/projects" },
-  { name: "Contact", href: "/contact" },
+  { name: "Home", href: "#Home" },
+  { name: "About", href: "#About" },
+  { name: "Portfolio", href: "#Portofolio" },
+  { name: "Contact", href: "#Contact" },
 ];
 
 export default function Navbar() {
@@ -86,14 +86,31 @@ export default function Navbar() {
       >
         <div className="space-y-1 px-4 pb-5 pt-2">
           {navItems.map((item) => (
-            <Link
-              key={item.name}
-              href={item.href}
-              className="block rounded-md px-3 py-2 text-base font-medium hover:bg-white/50 transition-colors"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              {item.name}
-            </Link>
+            <li key={item.name}>
+              <button
+                className="relative py-2 text-md transition-colors duration-300 ease-in-out hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-[#333399] to-[#FF00CC] font-cascadia"
+                onClick={() => {
+                  const section = document.getElementById(
+                    item.href.replace("#", "")
+                  );
+                  if (section) {
+                    section.scrollIntoView({ behavior: "smooth" });
+                  }
+                }}
+                onMouseEnter={() => setHoveredItem(item.name)}
+                onMouseLeave={() => setHoveredItem(null)}
+              >
+                {item.name}
+                <span
+                  className={cn(
+                    "absolute inset-x-0 -bottom-0.5 h-0.5 bg-gradient-to-r from-[#333399] to-[#FF00CC] rounded-full transition-all duration-300",
+                    hoveredItem === item.name
+                      ? "opacity-100 scale-x-100"
+                      : "opacity-0 scale-x-0"
+                  )}
+                />
+              </button>
+            </li>
           ))}
         </div>
       </div>
