@@ -1,30 +1,70 @@
 "use client";
 
-import { useState } from "react";
-import Link from "next/link";
+import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/libs/utils";
 
 // Logo component
 const Logo = () => (
-  <Link href="/" className="flex items-center gap-2">
+  <button
+    onClick={() => {
+      const section = document.getElementById("Home");
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    }}
+    className="flex items-center gap-2"
+  >
     <span className="text-xl font-bold font-cascadia bg-gradient-to-r from-[#333399] to-[#FF00CC] bg-clip-text text-transparent">
       Hiraeth
     </span>
-  </Link>
+  </button>
 );
 
 // Navigation items
 const navItems = [
   { name: "Home", href: "#Home" },
   { name: "About", href: "#About" },
-  { name: "Portfolio", href: "#Portofolio" },
+  { name: "Portfolio", href: "#Portfolio" },
   { name: "Contact", href: "#Contact" },
 ];
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
+  const [activeSection, setActiveSection] = useState("Home");
+
+  // Observer for section visibility
+  useEffect(() => {
+    const sections = document.querySelectorAll("section[id]");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      {
+        threshold: 0.6, // 60% visible
+      }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+
+    return () => {
+      sections.forEach((section) => observer.unobserve(section));
+    };
+  }, []);
+
+  // Scroll to section
+  const scrollToSection = (id: string) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <header className="fixed left-0 top-0 z-50 w-full">
@@ -38,9 +78,14 @@ export default function Navbar() {
             <ul className="flex items-center gap-8">
               {navItems.map((item) => (
                 <li key={item.name}>
-                  <Link
-                    href={item.href}
-                    className="relative py-2 text-md transition-colors duration-300 ease-in-out hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-[#333399] to-[#FF00CC] font-cascadia"
+                  <button
+                    className={cn(
+                      "relative py-2 text-md font-cascadia transition-colors duration-300 ease-in-out font-bold",
+                      item.name === activeSection
+                        ? "text-transparent bg-clip-text bg-gradient-to-r from-[#333399] to-[#FF00CC]"
+                        : "text-slate-400"
+                    )}
+                    onClick={() => scrollToSection(item.href.replace("#", ""))}
                     onMouseEnter={() => setHoveredItem(item.name)}
                     onMouseLeave={() => setHoveredItem(null)}
                   >
@@ -48,12 +93,12 @@ export default function Navbar() {
                     <span
                       className={cn(
                         "absolute inset-x-0 -bottom-0.5 h-0.5 bg-gradient-to-r from-[#333399] to-[#FF00CC] rounded-full transition-all duration-300",
-                        hoveredItem === item.name
+                        hoveredItem === item.name || activeSection === item.name
                           ? "opacity-100 scale-x-100"
                           : "opacity-0 scale-x-0"
                       )}
                     />
-                  </Link>
+                  </button>
                 </li>
               ))}
             </ul>
@@ -84,35 +129,28 @@ export default function Navbar() {
             : "max-h-0 opacity-0 overflow-hidden"
         )}
       >
-        <div className="space-y-1 px-4 pb-5 pt-2">
+        <ul className="space-y-1 px-4 pb-5 pt-2">
           {navItems.map((item) => (
             <li key={item.name}>
               <button
-                className="relative py-2 text-md transition-colors duration-300 ease-in-out hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-[#333399] to-[#FF00CC] font-cascadia"
                 onClick={() => {
-                  const section = document.getElementById(
-                    item.href.replace("#", "")
-                  );
-                  if (section) {
-                    section.scrollIntoView({ behavior: "smooth" });
-                  }
+                  setMobileMenuOpen(false);
+                  scrollToSection(item.href.replace("#", ""));
                 }}
+                className={cn(
+                  "block w-full text-left rounded-md px-3 py-2 text-base font-medium font-cascadia transition-colors",
+                  item.name === activeSection
+                    ? "text-transparent bg-clip-text bg-gradient-to-r from-[#333399] to-[#FF00CC]"
+                    : "text-slate-600 hover:bg-white/50"
+                )}
                 onMouseEnter={() => setHoveredItem(item.name)}
                 onMouseLeave={() => setHoveredItem(null)}
               >
                 {item.name}
-                <span
-                  className={cn(
-                    "absolute inset-x-0 -bottom-0.5 h-0.5 bg-gradient-to-r from-[#333399] to-[#FF00CC] rounded-full transition-all duration-300",
-                    hoveredItem === item.name
-                      ? "opacity-100 scale-x-100"
-                      : "opacity-0 scale-x-0"
-                  )}
-                />
               </button>
             </li>
           ))}
-        </div>
+        </ul>
       </div>
     </header>
   );
