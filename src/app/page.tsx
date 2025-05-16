@@ -5,6 +5,8 @@ import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import About from "@/components/About";
 import PortfolioTabs from "@/components/portfolio/PortfolioTabs";
+import ContactSection from "@/components/contact/ContactSection";
+import { Contact } from "lucide-react";
 
 export default function App() {
   const [projects, setProjects] = useState([]);
@@ -41,43 +43,51 @@ export default function App() {
     <>
       <main className="min-h-screen bg-black text-white">
         <Navbar />
-        <HeroSection />
-        <About />
-
+        <section id="Home">
+          <HeroSection />
+        </section>
+        <section id="About" className="scroll-mt-24">
+          <About />
+        </section>
         {/* PortfolioTabs di sini */}
-        <div className="py-20 px-8 md:px-16 bg-black" id="Portofolio">
-          {/* Header section */}
-          <div
-            className="text-center pb-10"
-            data-aos="fade-up"
-            data-aos-duration="1000"
-          >
-            <h2 className="inline-block text-3xl md:text-5xl font-bold text-center mx-auto text-transparent bg-clip-text bg-gradient-to-r from-[#333399] to-[#FF00CC] font-cascadia">
-              <span
-                style={{
-                  color: "#333399",
-                  backgroundImage:
-                    "linear-gradient(45deg, #333399 10%, #FF00CC 93%)",
-                  WebkitBackgroundClip: "text",
-                  backgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                }}
-              >
-                Portfolio
-              </span>
-            </h2>
-            <p className="text-slate-400 max-w-2xl mx-auto text-sm md:text-base mt-2 font-cascadia">
-              Below is a list of projects I have worked on.
-            </p>
-          </div>
+        <section id="Portfolio">
+          <div className="py-20 px-8 md:px-16 bg-black">
+            {/* Header section */}
+            <div
+              className="text-center pb-10"
+              data-aos="fade-up"
+              data-aos-duration="1000"
+            >
+              <h2 className="inline-block text-3xl md:text-5xl font-bold text-center mx-auto text-transparent bg-clip-text bg-gradient-to-r from-[#333399] to-[#FF00CC] font-cascadia">
+                <span
+                  style={{
+                    color: "#333399",
+                    backgroundImage:
+                      "linear-gradient(45deg, #333399 10%, #FF00CC 93%)",
+                    WebkitBackgroundClip: "text",
+                    backgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                  }}
+                >
+                  Portfolio
+                </span>
+              </h2>
+              <p className="text-slate-400 max-w-2xl mx-auto text-sm md:text-base mt-2 font-cascadia">
+                Below is a list of projects I have worked on.
+              </p>
+            </div>
 
-          {/* Portfolio Tabs */}
-          <PortfolioTabs
-            projects={projects}
-            certificates={certificates}
-            techStacks={techStacks}
-          />
-        </div>
+            {/* Portfolio Tabs */}
+            <PortfolioTabs
+              projects={projects}
+              certificates={certificates}
+              techStacks={techStacks}
+            />
+          </div>
+        </section>
+        <section id="Contact">
+          <ContactSection />
+        </section>
       </main>
     </>
   );

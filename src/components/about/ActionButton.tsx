@@ -21,7 +21,7 @@ const ActionButtons = () => {
         </button>
       </a>
 
-      <a href="mailto:sahrulridho@student.telkomuniversity.ac.id" className="w-full lg:w-auto">
+      <a href="mailto:sahrulridho@student.telkomuniversity.ac.id?subject=Hello&body=Hello Sahrul 👋," className="w-full lg:w-auto">
         <button
           data-aos="fade-up"
           data-aos-duration="1000"
