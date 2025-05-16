@@ -6,7 +6,6 @@ import HeroSection from "@/components/HeroSection";
 import About from "@/components/About";
 import PortfolioTabs from "@/components/portfolio/PortfolioTabs";
 import ContactSection from "@/components/contact/ContactSection";
-import { Contact } from "lucide-react";
 
 export default function App() {
   const [projects, setProjects] = useState([]);
@@ -86,8 +85,27 @@ export default function App() {
           </div>
         </section>
         <section id="Contact">
+          <div className="text-center lg:mb-8 mb-2 px-[5%] font-cascadia">
+            <div className="inline-block relative group">
+              <h2
+                className="text-3xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#333399] to-[#FF00CC]"
+                data-aos="zoom-in-up"
+                data-aos-duration="700"
+              >
+                Contact 
+              </h2>
+              <p className="text-slate-400 max-w-2xl mx-auto text-sm md:text-base mt-2 font-cascadia">
+                I’d love to hear from you! Whether it's to discuss a project or simply connect, drop me a message via any of the links below
+              </p>
+            </div>
+          </div>
           <ContactSection />
         </section>
+        <footer className="relative z-10 py-8 border-t border-white/10">
+          <div className="max-w-5xl mx-auto px-8 text-center text-white/50 text-sm">
+            © {new Date().getFullYear()} Your Portfolio. All rights reserved.
+          </div>
+        </footer>
       </main>
     </>
   );
