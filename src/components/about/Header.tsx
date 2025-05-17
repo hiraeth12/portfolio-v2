@@ -12,8 +12,12 @@ const Header = () => (
       >
         About Me
       </h2>
-      <p className="text-slate-400 max-w-2xl mx-auto text-sm md:text-base mt-2 font-cascadia">
-        Get to know me 
+      <p
+        className="text-slate-400 max-w-2xl mx-auto text-sm md:text-base mt-2 font-cascadia"
+        data-aos="zoom-in-up"
+        data-aos-duration="700"
+      >
+        Get to know me
       </p>
     </div>
   </div>

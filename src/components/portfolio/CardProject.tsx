@@ -73,7 +73,7 @@ const CardProject: React.FC<CardProjectProps> = ({
                 </span>
               )}
 
-              {id ? (
+              {/* {id ? (
                 <Link
                   href={`/project/${id}`}
                   onClick={handleDetails}
@@ -86,7 +86,7 @@ const CardProject: React.FC<CardProjectProps> = ({
                 <span className="text-gray-500 text-sm">
                   Details Not Available
                 </span>
-              )}
+              )} */}
             </div>
           </div>
 
