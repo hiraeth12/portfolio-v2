@@ -92,18 +92,24 @@ export default function App() {
                 data-aos="zoom-in-up"
                 data-aos-duration="700"
               >
-                Contact 
+                Contact
               </h2>
-              <p className="text-slate-400 max-w-2xl mx-auto text-sm md:text-base mt-2 font-cascadia">
-                I’d love to hear from you! Whether it's to discuss a project or simply connect, drop me a message via any of the links below
+              <p
+                className="text-slate-400 max-w-2xl mx-auto text-sm md:text-base mt-2 font-cascadia"
+                data-aos="zoom-in-up"
+                data-aos-duration="700"
+              >
+                I’d love to hear from you! Whether it's to discuss a project or
+                simply connect, drop me a message via any of the links below
               </p>
             </div>
           </div>
           <ContactSection />
         </section>
-        <footer className="relative z-10 py-8 border-t border-white/10">
+        <footer className="relative z-10 py-8 border-t border-white/10 font-cascadia">
           <div className="max-w-5xl mx-auto px-8 text-center text-white/50 text-sm">
-            © {new Date().getFullYear()} Your Portfolio. All rights reserved.
+            © {new Date().getFullYear()} Sahrul Ridho Firdaus. All rights
+            reserved.
           </div>
         </footer>
       </main>

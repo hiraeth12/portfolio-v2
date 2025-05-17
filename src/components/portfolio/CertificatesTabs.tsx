@@ -9,7 +9,9 @@ interface CertificatesTabProps {
   certificates: CertificateType[];
 }
 
-export default function CertificatesTab({ certificates }: CertificatesTabProps) {
+export default function CertificatesTab({
+  certificates,
+}: CertificatesTabProps) {
   const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
   const initialItems = isMobile ? 4 : 6;
 
@@ -24,12 +26,18 @@ export default function CertificatesTab({ certificates }: CertificatesTabProps) 
   }, [showAll, certificates, initialItems]);
 
   return (
-    <div className="container mx-auto flex justify-center items-center overflow-hidden">
+    <div className="container mx-auto flex flex-col items-center overflow-hidden">
       <div className="grid grid-cols-1 md:grid-cols-3 md:gap-5 gap-4">
         {displayedCertificates.map((certificate, index) => (
           <div
             key={index}
-            data-aos={index % 3 === 0 ? "fade-up-right" : index % 3 === 1 ? "fade-up" : "fade-up-left"}
+            data-aos={
+              index % 3 === 0
+                ? "fade-up-right"
+                : index % 3 === 1
+                ? "fade-up"
+                : "fade-up-left"
+            }
             data-aos-duration={index % 3 === 1 ? "1200" : "1000"}
           >
             <Certificate ImgSertif={certificate.Img} />

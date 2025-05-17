@@ -10,9 +10,7 @@ import {
   Instagram,
   Mail,
   MapPin,
-  Phone,
   ExternalLink,
-  Code,
   Zap,
 } from "lucide-react";
 
@@ -142,7 +140,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section className="relative z-10 py-10 px-8 md:px-16">
+    <section className="relative z-10 py-10 px-8 md:px-16 font-cascadia">
       <div className="max-w-6xl mx-auto">
         
 
@@ -188,7 +186,7 @@ export default function ContactSection() {
                 className={cn(
                   "w-12 h-12 rounded-full flex items-center justify-center mb-4",
                   item.featured
-                    ? "bg-gradient-to-r from-rose-500 to-indigo-500"
+                    ? "bg-gradient-to-br from-rose-500 to-indigo-500"
                     : "bg-white/10"
                 )}
               >

@@ -1,18 +1,43 @@
 [
   {
     "id": "1",
-    "Img": "/images/placeholder-1.jpg"
+    "Img": "/certificate_images/DSA_Certificate.png"
   },
   {
     "id": "2",
-    "Img": "/images/placeholder-2.jpg"
+    "Img": "/certificate_images/Dicoding_Sertif_1.png"
   },
   {
     "id": "3",
-    "Img": "/images/placeholder-3.jpg"
+    "Img": "/certificate_images/Certificate of Appreciation_ Sahrul Ridho Firdaus.jpg"
   },
   {
     "id": "4",
-    "Img": "/images/placeholder-4.jpg"
+    "Img": "/certificate_images/Understanding_Data.png"
+  },
+  {
+    "id": "5",
+    "Img": "/certificate_images/Understanding_Business.png"
+  },
+  {
+    "id": "6",
+    "Img": "/certificate_images/Data_Story.png"
+  },
+  {
+    "id": "7",
+    "Img": "/certificate_images/Data_Story vs Dash.png"
+  },
+  {
+    "id": "8",
+    "Img": "/certificate_images/Data_Insight.png"
+  },
+  {
+    "id": "9",
+    "Img": "/certificate_images/Data Driven.png"
+  },
+  {
+    "id": "10",
+    "Img": "/certificate_images/Business_Value.png"
   }
+  
 ]

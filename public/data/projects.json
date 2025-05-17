@@ -1,30 +1,37 @@
 [
   {
     "id": "1",
-    "Title": "Weather App",
-    "Description": "Aplikasi cuaca realtime menggunakan OpenWeather API.",
-    "Img": "/images/placeholder-1.jpg",
-    "Link": "#"
+    "Title": "Handwritten Digit Recognition",
+    "Description": "This project is a neural network-based solution for recognizing handwritten digits using the MNIST dataset. The implementation leverages TensorFlow and Keras for building and training the model.",
+    "Img": "/project_images/mnist-dummy.png",
+    "Link": "https://colab.research.google.com/drive/1QGvQx7V9eUSp6ubmsKMDaZZcKfNGga2D"
   },
   {
     "id": "2",
-    "Title": "Todo List",
-    "Description": "Aplikasi manajemen tugas harian dengan fitur filter dan dark mode.",
-    "Img": "/images/placeholder-2.jpg",
-    "Link": "#"
+    "Title": "Customer Satisfaction Rating System",
+    "Description": "Using fuzzy logic, the system assesses customer satisfaction based on various parameters such as service quality, food quality, and ambiance. The fuzzy inference system processes these inputs to provide a more accurate and human-like evaluation of customer satisfaction.",
+    "Img": "/project_images/restaurant-dummy.png",
+    "Link": "https://colab.research.google.com/drive/1ZMy02H79W6Bdls3lTG6b8Ul4DznKwzoT"
   },
   {
     "id": "3",
-    "Title": "Portfolio Website",
-    "Description": "Portofolio pribadi yang menampilkan proyek dan sertifikat saya.",
-    "Img": "/images/placeholder-3.jpg",
-    "Link": "#"
+    "Title": "Personal Portfolio V1",
+    "Description": "Developed my first personal portfolio. simple html, tailwindcss , and Javascript",
+    "Img": "/project_images/personal-portfolio.png",
+    "Link": "https://hiraeth12.github.io/portfolio/"
   },
   {
     "id": "4",
-    "Title": "Movie Search",
-    "Description": "Cari film dari OMDB API dengan fitur pagination dan modal detail.",
-    "Img": "/images/placeholder-4.jpg",
-    "Link": "#"
+    "Title": "Sukishiro",
+    "Description": "Showcases the UI/UX design for SUKISHIRO, an anime streaming platform with a built-in community feature.",
+    "Img": "/project_images/sukishiro.png",
+    "Link": "https://www.figma.com/design/VZsJlmLg6mMVOGllNuxPCY/SUKISHIRO?node-id=0-1&p=f&t=YPEkgjppWvNasgmh-0"
+  },
+  {
+    "id": "5",
+    "Title": "Indonesia Earthquake Map",
+    "Description": "Indonesia Earthquake map by utilizing mapbox, vite, react. Providing realtime data from BMKG",
+    "Img": "/project_images/mapbox-js.png",
+    "Link": "https://github.com/hiraeth12/persebaran-gempa"
   }
 ]
