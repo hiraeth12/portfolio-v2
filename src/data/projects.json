@@ -3,7 +3,7 @@
     "id": "1",
     "Title": "Handwritten Digit Recognition",
     "Description": "This project is a neural network-based solution for recognizing handwritten digits using the MNIST dataset. The implementation leverages TensorFlow and Keras for building and training the model.",
-    "Img": ["/project_images/mnist-dummy.png"],
+    "Img": "/project_images/mnist-dummy.png",
     "Link": "https://colab.research.google.com/drive/1QGvQx7V9eUSp6ubmsKMDaZZcKfNGga2D",
     "Github": "https://github.com/hiraeth12/handwrittenRecognition",
     "TechStack": ["Python", "TensorFlow", "Keras", "Numpy"],
@@ -19,7 +19,7 @@
     "id": "2",
     "Title": "Customer Satisfaction Rating System",
     "Description": "Using fuzzy logic, the system assesses customer satisfaction based on various parameters such as service quality, food quality, and ambiance. The fuzzy inference system processes these inputs to provide a more accurate and human-like evaluation of customer satisfaction.",
-    "Img": ["/project_images/restaurant-dummy.png"],
+    "Img": "/project_images/restaurant-dummy.png",
     "Link": "https://colab.research.google.com/drive/1ZMy02H79W6Bdls3lTG6b8Ul4DznKwzoT",
     "Github": "https://github.com/hiraeth12/fuzzyrestaurant",
     "TechStack": ["Python", "Fuzzy Logic", "Scikit-fuzzy"],
@@ -33,7 +33,7 @@
     "id": "3",
     "Title": "Personal Portfolio V1",
     "Description": "Developed my first personal portfolio. simple html, tailwindcss , and Javascript",
-    "Img": ["/project_images/personal-portfolio.png"],
+    "Img": "/project_images/personal-portfolio.png",
     "Link": "https://hiraeth12.github.io/portfolio/",
     "Github": "https://github.com/hiraeth12/portfolio",
     "TechStack": ["HTML", "CSS", "Javascript", "Tailwind"],
@@ -47,61 +47,29 @@
     "id": "4",
     "Title": "Sukishiro",
     "Description": "Showcases the UI/UX design for SUKISHIRO, an anime streaming platform with a built-in community feature.",
-    "Img": [
-      "/project_images/sukishiro.png",
-      "/project_images/sukishiro_2.png",
-      "/project_images/sukishiro_3.png",
-      "/project_images/sukishiro_4.png"
-    ],
+    "Img": "/project_images/sukishiro.png",
     "Link": "https://www.figma.com/design/VZsJlmLg6mMVOGllNuxPCY/SUKISHIRO?node-id=0-1&p=f&t=YPEkgjppWvNasgmh-0",
     "Github": "Private",
     "TechStack": ["Figma", "UI/UX Design", "Prototyping"],
     "Features": [
       "Modern UI Design: Clean and intuitive interface design",
-      "Community Features: Built-in social features for anime fans",
+      "Community Features: Built-in social features for anime fans", 
       "Responsive Layout: Optimized for mobile and desktop viewing",
       "User Experience: Seamless navigation and content discovery"
     ]
   },
   {
     "id": "5",
-    "Title": "SeismoTrack",
+    "Title": "Seismo-Track",
     "Description": "Indonesia Earthquake map by utilizing mapbox, vite, react. Providing realtime data from BMKG",
-    "Img": [
-      "/project_images/seismotrack_1.png",
-      "/project_images/seismotrack_2.png",
-      "/project_images/seismotrack_3.png",
-      "/project_images/seismotrack_4.png"
-    ],
+    "Img": "/project_images/mapbox-js.png",
     "Link": "https://seismo-track.vercel.app/",
     "Github": "https://github.com/hiraeth12/SeismoTrack",
-    "TechStack": ["React", "Vite", "Mapbox", "TypeScript"],
+    "TechStack": ["React", "Vite", "Mapbox", "Javascript"],
     "Features": [
       "Real-time Data: Displays live earthquake data from BMKG.",
       "Interactive Map: Utilizes Mapbox for an interactive map experience.",
-      "Responsive Design: Adapts to various screen sizes and devices.",
-      "Early Warning: Provides alerts for significant seismic activities."
-    ]
-  },
-  {
-    "id": "6",
-    "Title": "TaniMaju",
-    "Description": "TaniMaju is a web-based platform designed to help village communities manage and showcase the results of their agricultural harvests. Built using React and Vite, this system streamlines the process of recording, displaying, and reporting village produce, enabling transparency and ease of access for both community members and buyers.",
-    "Img": [
-      "/project_images/tanimaju_1.png",
-      "/project_images/tanimaju_2.png",
-      "/project_images/tanimaju_3.png",
-      "/project_images/tanimaju_4.png"
-    ],
-    "Link": "https://tanimaju.online",
-    "Github": "https://github.com/hiraeth12/website-tanimaju",
-    "TechStack": ["React", "Vite", "TypeScript", "Express","MySQL","Node.js"],
-    "Features": [
-      "Harvest Management: Add, edit, and delete records of village harvests.",
-      "Product Showcase: Display harvest results with images and descriptions.",
-      "Reporting: Generate reports on harvest quantities and sales.",
-      "User Roles: Support for admin and regular users with tailored permissions.",
-      "Responsive Design: Optimized for desktop and mobile devices."
+      "Responsive Design: Adapts to various screen sizes and devices."
     ]
   }
 ]

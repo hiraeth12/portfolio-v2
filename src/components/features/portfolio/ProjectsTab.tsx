@@ -24,7 +24,7 @@ export default function ProjectsTab({ projects }: ProjectsTabProps) {
   }, [showAll, projects, initialItems]);
 
   return (
-    <div className="container mx-auto flex justify-center items-center overflow-hidden font-cascadia">
+    <div className="container mx-auto flex flex-col justify-center items-center overflow-hidden font-cascadia">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 2xl:grid-cols-3 gap-5">
         {displayedProjects.map((project, index) => (
           <div
@@ -44,7 +44,7 @@ export default function ProjectsTab({ projects }: ProjectsTabProps) {
       </div>
 
       {projects.length > initialItems && (
-        <div className="mt-6 w-full flex justify-start">
+        <div className="mt-6 w-full flex justify-center">
           <ToggleButton onClick={toggleShowMore} isShowingMore={showAll} />
         </div>
       )}

@@ -1,11 +1,13 @@
 "use client";
 import { useEffect, useState } from "react";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import HeroSection from "@/components/HeroSection";
-import About from "@/components/About";
-import PortfolioTabs from "@/components/portfolio/PortfolioTabs";
-import ContactSection from "@/components/contact/ContactSection";
+import { 
+  Navbar,
+  HeroSection,
+  AboutSection,
+  ContactSection
+} from "@/components";
+import { PortfolioTabs } from "@/components/features/portfolio";
 
 export default function App() {
   const [projects, setProjects] = useState([]);
@@ -46,7 +48,7 @@ export default function App() {
           <HeroSection />
         </section>
         <section id="About" className="scroll-mt-24">
-          <About />
+          <AboutSection />
         </section>
         {/* PortfolioTabs di sini */}
         <section id="Portfolio">

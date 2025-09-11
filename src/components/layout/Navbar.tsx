@@ -1,8 +1,10 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import { cn } from "@/libs/utils";
+import { cn } from "@/lib/utils";
+import { useActiveSection } from "@/hooks";
+import { NAV_ITEMS } from "@/constants";
 
 // Logo component
 const Logo = () => (
@@ -22,41 +24,12 @@ const Logo = () => (
 );
 
 // Navigation items
-const navItems = [
-  { name: "Home", href: "#Home" },
-  { name: "About", href: "#About" },
-  { name: "Portfolio", href: "#Portfolio" },
-  { name: "Contact", href: "#Contact" },
-];
+const navItems = NAV_ITEMS;
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
-  const [activeSection, setActiveSection] = useState("Home");
-
-  // Observer for section visibility
-  useEffect(() => {
-    const sections = document.querySelectorAll("section[id]");
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
-          }
-        });
-      },
-      {
-        threshold: 0.6, // 60% visible
-      }
-    );
-
-    sections.forEach((section) => observer.observe(section));
-
-    return () => {
-      sections.forEach((section) => observer.unobserve(section));
-    };
-  }, []);
+  const activeSection = useActiveSection();
 
   // Scroll to section
   const scrollToSection = (id: string) => {

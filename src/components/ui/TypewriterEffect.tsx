@@ -7,6 +7,7 @@ interface TypewriterEffectProps {
   typingSpeed?: number
   deletingSpeed?: number
   pauseTime?: number
+  className?: string
 }
 
 export default function TypewriterEffect({
@@ -14,6 +15,7 @@ export default function TypewriterEffect({
   typingSpeed = 100,
   deletingSpeed = 50,
   pauseTime = 1500,
+  className = "",
 }: TypewriterEffectProps) {
   const [text, setText] = useState("")
   const [wordIndex, setWordIndex] = useState(0)
@@ -54,7 +56,7 @@ export default function TypewriterEffect({
   }, [text, isDeleting, wordIndex, words, typingSpeed, deletingSpeed, pauseTime])
 
   return (
-    <span className="inline-block font-cascadia">
+    <span className={`inline-block font-cascadia ${className}`}>
       {text}
       <span className={`inline-block w-1 h-8 ml-1 bg-rose-500 ${isBlinking ? "animate-blink" : ""}`}></span>
     </span>

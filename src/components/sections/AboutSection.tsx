@@ -4,9 +4,9 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { Code, Award, Globe } from "lucide-react";
 
-import Header from "@/components/about/Header";
-import AboutLayout from "@/components/about/AboutLayout";
-import StatsGrid from "@/components/about/StatsGrid";
+import { Header } from "../features/about";
+import { AboutLayout } from "../features/about";
+import { StatsGrid } from "../features/about";
 
 const About = () => {
   const [projects, setProjects] = useState([]);
@@ -15,7 +15,7 @@ const About = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const resProjects = await fetch("../data/projects.json");
+      const resProjects = await fetch("../data/projects.json");
         const resCertificates = await fetch("../data/certificates.json");
 
         const dataProjects = await resProjects.json();

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useMemo, useCallback } from "react";
-import Certificate from "@/components/Certificate";
+import Certificate from "@/components/sections/CertificateSection";
 import ToggleButton from "./ToggleButton";
 import { Certificate as CertificateType } from "@/types/portfolioTypes";
 
@@ -26,7 +26,7 @@ export default function CertificatesTab({
   }, [showAll, certificates, initialItems]);
 
   return (
-    <div className="container mx-auto flex flex-col items-center overflow-hidden">
+    <div className="container mx-auto flex flex-col items-center overflow-hidden font-cascadia">
       <div className="grid grid-cols-1 md:grid-cols-3 md:gap-5 gap-4">
         {displayedCertificates.map((certificate, index) => (
           <div
@@ -46,7 +46,7 @@ export default function CertificatesTab({
       </div>
 
       {certificates.length > initialItems && (
-        <div className="mt-6 w-full flex justify-start">
+        <div className="mt-6 w-full flex justify-center">
           <ToggleButton onClick={toggleShowMore} isShowingMore={showAll} />
         </div>
       )}

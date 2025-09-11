@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, memo } from "react";
-import TypewriterEffect from "./type-writer";
+import TypewriterEffect from "../ui/TypewriterEffect";
 import type { FC } from "react";
 import { Github, Linkedin, Instagram } from "lucide-react";
 

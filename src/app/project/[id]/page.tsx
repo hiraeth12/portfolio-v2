@@ -5,9 +5,11 @@ import { useRouter } from "next/navigation";
 import {
   ArrowLeft, ExternalLink, Github, Code2, Star,
   ChevronRight, Layers, Layout, Globe, Package, Cpu, Code,
+  ChevronLeft, ChevronRight as ChevronRightIcon,
 } from "lucide-react";
 import Swal from 'sweetalert2';
 import { Project, TechBadgeProps, FeatureItemProps, ProjectStatsProps } from '@/types/portfolioTypes';
+import ImageCarousel from '@/components/ui/ImageCarousel';
 
 const TECH_ICONS = {
   React: Globe,
@@ -114,26 +116,26 @@ const ProjectDetailsPage: React.FC<ProjectDetailsPageProps> = ({ params }) => {
       try {
         window.scrollTo(0, 0);
         
-        // Load from localStorage first
-        const storedProjects = JSON.parse(localStorage.getItem("projects") || "[]");
-        let selectedProject = storedProjects.find((p: Project) => String(p.id) === params.id);
+        // Always load fresh data from JSON file to ensure we get the latest format
+        let selectedProject = null;
         
-        // If not found in localStorage, try to load from JSON files
-        if (!selectedProject) {
-          try {
-            const response = await fetch('/data/projects.json');
-            if (response.ok) {
-              const projectsData = await response.json();
-              selectedProject = projectsData.find((p: Project) => String(p.id) === params.id);
-              
-              // Store in localStorage for future use
-              if (selectedProject) {
-                localStorage.setItem("projects", JSON.stringify(projectsData));
-              }
+        try {
+          const response = await fetch('/data/projects.json?t=' + Date.now()); // Cache busting
+          if (response.ok) {
+            const projectsData = await response.json();
+            selectedProject = projectsData.find((p: Project) => String(p.id) === params.id);
+            
+            // Update localStorage with fresh data
+            if (projectsData) {
+              localStorage.setItem("projects", JSON.stringify(projectsData));
             }
-          } catch (error) {
-            console.error('Error loading projects data:', error);
           }
+        } catch (error) {
+          console.error('Error loading projects data:', error);
+          
+          // Fallback to localStorage only if fetch fails
+          const storedProjects = JSON.parse(localStorage.getItem("projects") || "[]");
+          selectedProject = storedProjects.find((p: Project) => String(p.id) === params.id);
         }
         
         if (selectedProject) {
@@ -141,8 +143,10 @@ const ProjectDetailsPage: React.FC<ProjectDetailsPageProps> = ({ params }) => {
             ...selectedProject,
             Features: selectedProject.Features || [],
             TechStack: selectedProject.TechStack || [],
-            Github: selectedProject.Github || 'https://github.com/EkiZR',
+            Github: selectedProject.Github || 'https://github.com/hiraeth12',
           };
+          console.log('Enhanced project loaded:', enhancedProject);
+          console.log('Project images:', enhancedProject.Img);
           setProject(enhancedProject);
         }
       } catch (error) {
@@ -276,16 +280,12 @@ const ProjectDetailsPage: React.FC<ProjectDetailsPageProps> = ({ params }) => {
             </div>
 
             <div className="space-y-6 md:space-y-10 animate-slideInRight">
-              <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl group">
-                <div className="absolute inset-0 bg-gradient-to-t from-[#030014] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <img
-                  src={project.Img}
-                  alt={project.Title}
-                  className="w-full object-cover transform transition-transform duration-700 will-change-transform group-hover:scale-105"
-                  onLoad={() => setIsImageLoaded(true)}
-                />
-                <div className="absolute inset-0 border-2 border-white/0 group-hover:border-white/10 transition-colors duration-300 rounded-2xl" />
-              </div>
+              {/* Image Carousel */}
+              <ImageCarousel 
+                images={Array.isArray(project.Img) ? project.Img : [project.Img]}
+                title={project.Title}
+                className="w-full"
+              />
 
               {/* Fitur Utama */}
               <div className="bg-white/[0.02] backdrop-blur-xl rounded-2xl p-8 border border-white/10 space-y-6 hover:border-white/20 transition-colors duration-300 group">
