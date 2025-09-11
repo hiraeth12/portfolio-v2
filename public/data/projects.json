@@ -4,34 +4,72 @@
     "Title": "Handwritten Digit Recognition",
     "Description": "This project is a neural network-based solution for recognizing handwritten digits using the MNIST dataset. The implementation leverages TensorFlow and Keras for building and training the model.",
     "Img": "/project_images/mnist-dummy.png",
-    "Link": "https://colab.research.google.com/drive/1QGvQx7V9eUSp6ubmsKMDaZZcKfNGga2D"
+    "Link": "https://colab.research.google.com/drive/1QGvQx7V9eUSp6ubmsKMDaZZcKfNGga2D",
+    "Github": "https://github.com/hiraeth12/handwrittenRecognition",
+    "TechStack": ["Python", "TensorFlow", "Keras", "Numpy"],
+    "Features": [
+      "Data Preprocessing: Normalization and reshaping of images for model compatibility.",
+      "Model Architecture: A sequential model with convolutional, pooling, and dense layers.",
+      "Training: Model trained on the MNIST dataset with validation split.",
+      "Evaluation: Performance evaluated using accuracy and loss metrics.",
+      "Visualization: Training history visualized using Matplotlib."
+    ]
   },
   {
     "id": "2",
     "Title": "Customer Satisfaction Rating System",
     "Description": "Using fuzzy logic, the system assesses customer satisfaction based on various parameters such as service quality, food quality, and ambiance. The fuzzy inference system processes these inputs to provide a more accurate and human-like evaluation of customer satisfaction.",
     "Img": "/project_images/restaurant-dummy.png",
-    "Link": "https://colab.research.google.com/drive/1ZMy02H79W6Bdls3lTG6b8Ul4DznKwzoT"
+    "Link": "https://colab.research.google.com/drive/1ZMy02H79W6Bdls3lTG6b8Ul4DznKwzoT",
+    "Github": "https://github.com/hiraeth12/fuzzyrestaurant",
+    "TechStack": ["Python", "Fuzzy Logic", "Scikit-fuzzy"],
+    "Features": [
+      "Input Parameters: Service quality, food quality, and ambiance ratings.",
+      "Fuzzy Inference: Processes inputs using fuzzy logic rules.",
+      "Output: Provides a customer satisfaction score."
+    ]
   },
   {
     "id": "3",
     "Title": "Personal Portfolio V1",
     "Description": "Developed my first personal portfolio. simple html, tailwindcss , and Javascript",
     "Img": "/project_images/personal-portfolio.png",
-    "Link": "https://hiraeth12.github.io/portfolio/"
+    "Link": "https://hiraeth12.github.io/portfolio/",
+    "Github": "https://github.com/hiraeth12/portfolio",
+    "TechStack": ["HTML", "CSS", "Javascript", "Tailwind"],
+    "Features": [
+      "Responsive Design: Adapts to various screen sizes and devices.",
+      "Smooth Scrolling: Enhances user experience with smooth scrolling effects.",
+      "Interactive Elements: Includes buttons and links with hover effects."
+    ]
   },
   {
     "id": "4",
     "Title": "Sukishiro",
     "Description": "Showcases the UI/UX design for SUKISHIRO, an anime streaming platform with a built-in community feature.",
     "Img": "/project_images/sukishiro.png",
-    "Link": "https://www.figma.com/design/VZsJlmLg6mMVOGllNuxPCY/SUKISHIRO?node-id=0-1&p=f&t=YPEkgjppWvNasgmh-0"
+    "Link": "https://www.figma.com/design/VZsJlmLg6mMVOGllNuxPCY/SUKISHIRO?node-id=0-1&p=f&t=YPEkgjppWvNasgmh-0",
+    "Github": "Private",
+    "TechStack": ["Figma", "UI/UX Design", "Prototyping"],
+    "Features": [
+      "Modern UI Design: Clean and intuitive interface design",
+      "Community Features: Built-in social features for anime fans", 
+      "Responsive Layout: Optimized for mobile and desktop viewing",
+      "User Experience: Seamless navigation and content discovery"
+    ]
   },
   {
     "id": "5",
-    "Title": "Indonesia Earthquake Map",
+    "Title": "Seismo-Track",
     "Description": "Indonesia Earthquake map by utilizing mapbox, vite, react. Providing realtime data from BMKG",
     "Img": "/project_images/mapbox-js.png",
-    "Link": "https://github.com/hiraeth12/persebaran-gempa"
+    "Link": "https://seismo-track.vercel.app/",
+    "Github": "https://github.com/hiraeth12/SeismoTrack",
+    "TechStack": ["React", "Vite", "Mapbox", "Javascript"],
+    "Features": [
+      "Real-time Data: Displays live earthquake data from BMKG.",
+      "Interactive Map: Utilizes Mapbox for an interactive map experience.",
+      "Responsive Design: Adapts to various screen sizes and devices."
+    ]
   }
 ]

@@ -1,14 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { ExternalLink, ArrowRight } from "lucide-react";
-
-interface CardProjectProps {
-  Img: string;
-  Title: string;
-  Description: string;
-  Link?: string;
-  id?: string;
-}
+import { CardProjectProps } from "@/types/portfolioTypes";
 
 const CardProject: React.FC<CardProjectProps> = ({
   Img,
@@ -21,13 +14,6 @@ const CardProject: React.FC<CardProjectProps> = ({
     if (!ProjectLink) {
       e.preventDefault();
       alert("Live demo link is not available");
-    }
-  };
-
-  const handleDetails = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    if (!id) {
-      e.preventDefault();
-      alert("Project details are not available");
     }
   };
 
@@ -73,10 +59,9 @@ const CardProject: React.FC<CardProjectProps> = ({
                 </span>
               )}
 
-              {/* {id ? (
+              {id ? (
                 <Link
                   href={`/project/${id}`}
-                  onClick={handleDetails}
                   className="inline-flex items-center space-x-2 px-4 py-2 rounded-lg bg-white/5 hover:bg-white/10 text-white/90 transition-all duration-200 hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-purple-500/50"
                 >
                   <span className="text-sm font-medium">Details</span>
@@ -86,7 +71,7 @@ const CardProject: React.FC<CardProjectProps> = ({
                 <span className="text-gray-500 text-sm">
                   Details Not Available
                 </span>
-              )} */}
+              )}
             </div>
           </div>
 
