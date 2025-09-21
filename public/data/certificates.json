@@ -5,7 +5,7 @@
   },
   {
     "id": "2",
-    "Img": "/certificate_images/Dicoding_Sertif_1.png"
+    "Img": "/certificate_images/Alpro_Sertif.png"
   },
   {
     "id": "3",
@@ -13,11 +13,11 @@
   },
   {
     "id": "4",
-    "Img": "/certificate_images/Understanding_Data.png"
+    "Img": "/certificate_images/Dicoding_Sertif_1.png"
   },
   {
     "id": "5",
-    "Img": "/certificate_images/Understanding_Business.png"
+    "Img": "/certificate_images/Basic_Data.png"
   },
   {
     "id": "6",
@@ -38,6 +38,14 @@
   {
     "id": "10",
     "Img": "/certificate_images/Business_Value.png"
+  },
+  {
+    "id": "11",
+    "Img": "/certificate_images/Understanding_Data.png"
+  },
+  {
+    "id": "12",
+    "Img": "/certificate_images/Understanding_Business.png"
   }
   
 ]
